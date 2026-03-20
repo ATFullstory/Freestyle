@@ -126,9 +126,9 @@ if (signupForm) {
 
         // Layer 1 — wide outer corona
         ctx.globalAlpha  = alpha * 0.25;
-        ctx.strokeStyle  = '#FF10F0';
+        ctx.strokeStyle  = '#BF00FF';
         ctx.lineWidth    = 10;
-        ctx.shadowColor  = '#FF10F0';
+        ctx.shadowColor  = '#BF00FF';
         ctx.shadowBlur   = 40;
         ctx.beginPath(); tracePath(pts); ctx.stroke();
 
@@ -140,9 +140,9 @@ if (signupForm) {
 
         // Layer 3 — bright core
         ctx.globalAlpha  = alpha;
-        ctx.strokeStyle  = '#ffaaff';
+        ctx.strokeStyle  = '#df80ff';
         ctx.lineWidth    = 1.2;
-        ctx.shadowColor  = '#FF10F0';
+        ctx.shadowColor  = '#BF00FF';
         ctx.shadowBlur   = 6;
         ctx.beginPath(); tracePath(pts); ctx.stroke();
 
