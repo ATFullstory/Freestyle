@@ -54,17 +54,17 @@
 
         <!-- Progress Stepper -->
         <div class="checkout-progress" data-component="stepper" data-id="checkout-progress">
-            <div class="progress-step active" data-id="step-indicator-1">
+            <div class="progress-step active" data-component="step-indicator" data-id="step-indicator-1" data-position="1" data-state="active">
                 <div class="step-number">1</div>
                 <div class="step-label">Your Details</div>
             </div>
             <div class="progress-connector" data-id="connector-1-2"></div>
-            <div class="progress-step" data-id="step-indicator-2">
+            <div class="progress-step" data-component="step-indicator" data-id="step-indicator-2" data-position="2" data-state="pending">
                 <div class="step-number">2</div>
                 <div class="step-label">Choose Plan</div>
             </div>
             <div class="progress-connector" data-id="connector-2-3"></div>
-            <div class="progress-step" data-id="step-indicator-3">
+            <div class="progress-step" data-component="step-indicator" data-id="step-indicator-3" data-position="3" data-state="pending">
                 <div class="step-number">3</div>
                 <div class="step-label">Payment</div>
             </div>
@@ -74,7 +74,7 @@
         <div class="checkout-steps-wrapper">
 
             <!-- Step 1: Personal Details -->
-            <div class="checkout-step active" id="step-1" data-component="form-step" data-id="step-personal-details">
+            <div class="checkout-step active" id="step-1" data-component="form-step" data-id="step-personal-details" data-state="active">
                 <div class="checkout-card">
                     <h2 data-id="step-1-title">Your Details</h2>
                     <p data-id="step-1-subtitle">Tell us a bit about yourself to get started.</p>
@@ -97,7 +97,7 @@
                             <label for="phone">Phone Number</label>
                             <input type="tel" id="phone" placeholder="e.g. +1 555 000 0000" required data-id="phone-input">
                         </div>
-                        <button type="button" class="cta-primary step-btn" id="details-next" data-component="button" data-id="details-continue" disabled>
+                        <button type="button" class="cta-primary step-btn" id="details-next" data-component="button" data-id="details-continue" data-state="disabled" disabled>
                             Continue →
                         </button>
                     </form>
@@ -105,13 +105,13 @@
             </div>
 
             <!-- Step 2: Product Selection -->
-            <div class="checkout-step" id="step-2" data-component="product-selection" data-id="step-product-selection">
+            <div class="checkout-step" id="step-2" data-component="product-selection" data-id="step-product-selection" data-state="inactive">
                 <div class="checkout-card checkout-card--wide">
                     <h2 data-id="step-2-title">Choose Your Plan</h2>
                     <p data-id="step-2-subtitle">Select one or more plans. Mix and match to build the perfect package.</p>
                     <div class="product-grid" data-id="product-grid">
 
-                        <div class="product-card" data-product="Feature Title One" data-price="9" data-component="card" data-id="product-basic">
+                        <div class="product-card" data-product="Feature Title One" data-price="9" data-component="card" data-id="product-basic" data-position="1" data-state="unselected">
                             <div class="product-badge product-badge--pink">Basic</div>
                             <h3 data-id="product-name">Feature Title One</h3>
                             <div class="product-price" data-id="product-price">$9<span>/mo</span></div>
@@ -122,7 +122,7 @@
                             </ul>
                         </div>
 
-                        <div class="product-card" data-product="Feature Title Two" data-price="29" data-component="card" data-id="product-pro">
+                        <div class="product-card" data-product="Feature Title Two" data-price="29" data-component="card" data-id="product-pro" data-position="2" data-state="unselected">
                             <div class="product-badge product-badge--green">Pro</div>
                             <h3 data-id="product-name">Feature Title Two</h3>
                             <div class="product-price" data-id="product-price">$29<span>/mo</span></div>
@@ -133,7 +133,7 @@
                             </ul>
                         </div>
 
-                        <div class="product-card" data-product="Feature Title Three" data-price="99" data-component="card" data-id="product-enterprise">
+                        <div class="product-card" data-product="Feature Title Three" data-price="99" data-component="card" data-id="product-enterprise" data-position="3" data-state="unselected">
                             <div class="product-badge product-badge--purple">Enterprise</div>
                             <h3 data-id="product-name">Feature Title Three</h3>
                             <div class="product-price" data-id="product-price">$99<span>/mo</span></div>
@@ -146,16 +146,16 @@
 
                     </div>
                     <div class="selection-summary" data-id="selection-summary">
-                        <span id="selected-summary">No plan selected yet</span>
+                        <span id="selected-summary" data-id="selection-summary-text">No plan selected yet</span>
                     </div>
-                    <button type="button" class="cta-primary step-btn" id="products-next" data-component="button" data-id="products-continue" disabled>
+                    <button type="button" class="cta-primary step-btn" id="products-next" data-component="button" data-id="products-continue" data-state="disabled" disabled>
                         Continue →
                     </button>
                 </div>
             </div>
 
             <!-- Step 3: Payment -->
-            <div class="checkout-step" id="step-3" data-component="payment-form" data-id="step-payment">
+            <div class="checkout-step" id="step-3" data-component="payment-form" data-id="step-payment" data-state="inactive">
                 <div class="checkout-card">
                     <h2 data-id="step-3-title">Payment Details</h2>
                     <p data-id="step-3-subtitle">Your connection is secure. All transactions are encrypted.</p>
@@ -185,7 +185,7 @@
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" class="cta-primary purchase-btn" id="purchase-btn" data-component="button" data-id="purchase-button" disabled>
+                        <button type="submit" class="cta-primary purchase-btn" id="purchase-btn" data-component="button" data-id="purchase-button" data-state="disabled" disabled>
                             Complete Purchase
                         </button>
                     </form>
@@ -196,7 +196,7 @@
     </main>
 
     <!-- Success Overlay -->
-    <div class="success-overlay" id="success-overlay" data-id="success-overlay" style="display:none;">
+    <div class="success-overlay" id="success-overlay" data-component="modal" data-id="success-overlay" data-state="hidden" style="display:none;">
         <div class="success-card" data-component="card" data-id="success-card">
             <div class="success-icon" data-id="success-icon">⚡</div>
             <h2 data-id="success-title">Purchase Complete!</h2>

@@ -60,11 +60,15 @@ function goToStep(n) {
     if (!from || !to) return;
 
     from.classList.remove('active');
+    from.setAttribute('data-state', 'inactive');
     to.classList.add('active');
+    to.setAttribute('data-state', 'active');
 
     document.querySelectorAll('.progress-step').forEach((el, i) => {
+        const state = i + 1 === n ? 'active' : (i + 1 < n ? 'completed' : 'pending');
         el.classList.toggle('active',    i + 1 === n);
         el.classList.toggle('completed', i + 1 < n);
+        el.setAttribute('data-state', state);
     });
 
     document.querySelectorAll('.progress-connector').forEach((el, i) => {
@@ -92,7 +96,9 @@ function validateStep1() {
     const phone     = (document.getElementById('phone')          || {}).value || '';
     const emailOk   = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
     if (detailsNext) {
-        detailsNext.disabled = !(firstName.trim() && lastName.trim() && emailOk && phone.trim());
+        const isValid = !!(firstName.trim() && lastName.trim() && emailOk && phone.trim());
+        detailsNext.disabled = !isValid;
+        detailsNext.setAttribute('data-state', isValid ? 'enabled' : 'disabled');
     }
 }
 
@@ -118,7 +124,10 @@ const selectedSummary = document.getElementById('selected-summary');
 function updateProductSummary() {
     if (selectedCards.size === 0) {
         if (selectedSummary) selectedSummary.textContent = 'No plan selected yet';
-        if (productsNext) productsNext.disabled = true;
+        if (productsNext) {
+            productsNext.disabled = true;
+            productsNext.setAttribute('data-state', 'disabled');
+        }
         return;
     }
     const total = [...selectedCards].reduce((sum, c) => sum + parseInt(c.dataset.price), 0);
@@ -126,7 +135,10 @@ function updateProductSummary() {
     if (selectedSummary) {
         selectedSummary.innerHTML = 'Selected: <strong>' + names + '</strong> — <strong>$' + total + '/mo</strong>';
     }
-    if (productsNext) productsNext.disabled = false;
+    if (productsNext) {
+        productsNext.disabled = false;
+        productsNext.setAttribute('data-state', 'enabled');
+    }
 }
 
 document.querySelectorAll('.product-card').forEach(card => {
@@ -134,12 +146,14 @@ document.querySelectorAll('.product-card').forEach(card => {
         card.classList.toggle('selected');
         if (card.classList.contains('selected')) {
             selectedCards.add(card);
+            card.setAttribute('data-state', 'selected');
             fsEvent('Product Selected', {
                 product: card.dataset.product,
                 price:   parseInt(card.dataset.price)
             });
         } else {
             selectedCards.delete(card);
+            card.setAttribute('data-state', 'unselected');
             fsEvent('Product Deselected', { product: card.dataset.product });
         }
         updateProductSummary();
@@ -187,7 +201,9 @@ function validatePayment() {
     const expiryOk = /^\d{2}\s*\/\s*\d{2}$/.test(expiry.trim());
     const cvvOk    = /^\d{3,4}$/.test(cvv.trim());
     if (purchaseBtn) {
-        purchaseBtn.disabled = !(name.trim() && cardOk && expiryOk && cvvOk);
+        const isValid = !!(name.trim() && cardOk && expiryOk && cvvOk);
+        purchaseBtn.disabled = !isValid;
+        purchaseBtn.setAttribute('data-state', isValid ? 'enabled' : 'disabled');
     }
 }
 
@@ -418,6 +434,7 @@ function showSuccess() {
     const overlay = document.getElementById('success-overlay');
     if (!overlay) return;
     overlay.style.display = 'flex';
+    overlay.setAttribute('data-state', 'visible');
     requestAnimationFrame(() => requestAnimationFrame(() => overlay.classList.add('visible')));
 }
 
