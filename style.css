@@ -205,6 +205,12 @@ nav ul li a:hover {
     padding-left: 20px;
     border-left: 5px solid var(--color-neon-purple);
     box-shadow: -4px 0 15px rgba(191, 0, 255, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.testimonial:hover {
+    transform: translateY(-5px);
+    box-shadow: -4px 0 25px rgba(191, 0, 255, 0.6), 0 4px 20px rgba(191, 0, 255, 0.3);
 }
 
 .testimonial footer {
