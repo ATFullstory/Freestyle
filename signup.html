@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up — AdamCorp</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- FullStory Snippet -->
+    <script>
+        window['_fs_host'] = 'fullstory.com';
+        window['_fs_script'] = 'edge.fullstory.com/s/fs.js';
+        window['_fs_org'] = 'o-1DK6AA-na1';
+        window['_fs_namespace'] = 'FS';
+        !function(m,n,e,t,l,o,g,y){var s,f,a=function(h){
+        return!(h in m)||(m.console&&m.console.log&&m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].'),!1)}(e)
+        ;function p(b){var h,d=[];function j(){h&&(d.forEach((function(b){var d;try{d=b[h[0]]&&b[h[0]](h[1])}catch(h){return void(b[3]&&b[3](h))}
+        d&&d.then?d.then(b[2],b[3]):b[2]&&b[2](d)})),d.length=0)}function r(b){return function(d){h||(h=[b,d],j())}}return b(r(0),r(1)),{
+        then:function(b,h){return p((function(r,i){d.push([b,h,r,i]),j()}))}}}a&&(g=m[e]=function(){var b=function(b,d,j,r){function i(i,c){
+        h(b,d,j,i,c,r)}r=r||2;var c,u=/Async$/;return u.test(b)?(b=b.replace(u,""),"function"==typeof Promise?new Promise(i):p(i)):h(b,d,j,c,c,r)}
+        ;function h(h,d,j,r,i,c){return b._api?b._api(h,d,j,r,i,c):(b.q&&b.q.push([h,d,j,r,i,c]),null)}return b.q=[],b}(),y=function(b){function h(h){
+        "function"==typeof h[4]&&h[4](new Error(b))}var d=g.q;if(d){for(var j=0;j<d.length;j++)h(d[j]);d.length=0,d.push=h}},function(){
+        (o=n.createElement(t)).async=!0,o.crossOrigin="anonymous",o.src="https://"+l,o.onerror=function(){y("Error loading "+l)}
+        ;var b=n.getElementsByTagName(t)[0];b&&b.parentNode?b.parentNode.insertBefore(o,b):n.head.appendChild(o)}(),function(){function b(){}
+        function h(b,h,d){g(b,h,d,1)}function d(b,d,j){h("setProperties",{type:b,properties:d},j)}function j(b,h){d("user",b,h)}function r(b,h,d){j({
+        uid:b},d),h&&j(h,d)}g.identify=r,g.setUserVars=j,g.identifyAccount=b,g.clearUserCookie=b,g.setVars=d,g.event=function(b,d,j){h("trackEvent",{
+        name:b,properties:d},j)},g.anonymize=function(){r(!1)},g.shutdown=function(){h("shutdown")},g.restart=function(){h("restart")},
+        g.log=function(b,d){h("log",{level:b,msg:d})},g.consent=function(b){h("setIdentity",{consent:!arguments.length||b})}}(),s="fetch",
+        f="XMLHttpRequest",g._w={},g._w[f]=m[f],g._w[s]=m[s],m[s]&&(m[s]=function(){return g._w[s].apply(this,arguments)}),g._v="2.0.0")
+        }(window,document,window._fs_namespace,"script",window._fs_script);
+    </script>
+</head>
+<body>
+
+    <header data-section="site-header">
+        <a href="index.html" class="logo" data-id="logo">AdamCorp</a>
+        <nav data-component="navigation" data-id="main-nav">
+            <ul data-id="nav-list">
+                <li><a href="index.html#home"     data-component="link" data-id="home"     data-position="1">Home</a></li>
+                <li><a href="index.html#features" data-component="link" data-id="features" data-position="2">Features</a></li>
+                <li><a href="index.html#about"    data-component="link" data-id="about-us" data-position="3">About Us</a></li>
+                <li><a href="index.html#contact"  data-component="link" data-id="contact"  data-position="4">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="index.html" class="cta-header" data-component="button" data-id="back-to-home">Back to Home</a>
+    </header>
+
+    <main class="signup-main" data-section="signup">
+        <div class="signup-card" data-component="card" data-id="signup-card">
+            <h1 class="signup-heading" data-id="signup-heading">Create Your Account</h1>
+            <p class="signup-subtext" data-id="signup-subtext">Fill in your details below to get started. No commitment required.</p>
+
+            <form id="signup-form" novalidate data-component="form" data-id="signup-form">
+
+                <div class="form-group" data-id="full-name-field">
+                    <label for="full-name">Full Name</label>
+                    <input type="text" id="full-name" placeholder="e.g. Jane Doe" required data-id="full-name-input">
+                </div>
+
+                <div class="form-group" data-id="email-field">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="e.g. jane@example.com" required data-id="email-input">
+                </div>
+
+                <div class="form-group" data-id="job-title-field">
+                    <label for="job-title">Job Title</label>
+                    <input type="text" id="job-title" placeholder="e.g. Product Manager" data-id="job-title-input">
+                </div>
+
+                <div class="form-group" data-id="company-field">
+                    <label for="company">Company</label>
+                    <input type="text" id="company" placeholder="e.g. Acme Corp" data-id="company-input">
+                </div>
+
+                <!-- Password fields excluded from FullStory capture -->
+                <div class="fs-exclude">
+                    <div class="form-group" data-id="password-field">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Minimum 8 characters" required data-id="password-input">
+                    </div>
+
+                    <div class="form-group" data-id="confirm-password-field">
+                        <label for="confirm-password">Confirm Password</label>
+                        <input type="password" id="confirm-password" placeholder="Repeat your password" required data-id="confirm-password-input">
+                    </div>
+                </div>
+
+                <div class="form-checkbox" data-id="terms-checkbox-field">
+                    <input type="checkbox" id="terms" required data-id="terms-checkbox">
+                    <label for="terms">I agree to the
+                        <a href="#" data-component="link" data-id="terms-of-service">Terms of Service</a>
+                        and
+                        <a href="#" data-component="link" data-id="privacy-policy">Privacy Policy</a>
+                    </label>
+                </div>
+
+                <button type="submit" class="cta-primary signup-submit" data-component="button" data-id="create-account">Create Account</button>
+
+            </form>
+
+            <p class="signup-login-link" data-id="sign-in-prompt">Already have an account?
+                <a href="#" data-component="link" data-id="sign-in">Sign in</a>
+            </p>
+        </div>
+    </main>
+
+    <footer data-section="site-footer">
+        <div class="copyright" data-id="copyright">
+            <p>&copy; 2025 Coding Test Project. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <!-- FullStory Guides and Surveys -->
+    <script>
+    (function (w, d, s) {
+        var a = d.getElementsByTagName('head')[0];
+        var r = d.createElement('script');
+        r.async = 1;
+        r.src = s;
+        r.setAttribute('id', 'usetifulScript');
+        r.dataset.orgId = "o-1DK6AA-na1";
+        r.dataset.apiHostname = "https://guides.fullstory.com";
+        a.appendChild(r);
+    })(window, document, "https://guides.fullstory.com/dist/gs.js");
+    </script>
+</body>
+</html>
