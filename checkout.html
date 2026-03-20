@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout — AdamCorp</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- FullStory Snippet -->
+    <script>
+        window['_fs_host'] = 'fullstory.com';
+        window['_fs_script'] = 'edge.fullstory.com/s/fs.js';
+        window['_fs_org'] = 'o-1DK6AA-na1';
+        window['_fs_namespace'] = 'FS';
+        !function(m,n,e,t,l,o,g,y){var s,f,a=function(h){
+        return!(h in m)||(m.console&&m.console.log&&m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].'),!1)}(e)
+        ;function p(b){var h,d=[];function j(){h&&(d.forEach((function(b){var d;try{d=b[h[0]]&&b[h[0]](h[1])}catch(h){return void(b[3]&&b[3](h))}
+        d&&d.then?d.then(b[2],b[3]):b[2]&&b[2](d)})),d.length=0)}function r(b){return function(d){h||(h=[b,d],j())}}return b(r(0),r(1)),{
+        then:function(b,h){return p((function(r,i){d.push([b,h,r,i]),j()}))}}}a&&(g=m[e]=function(){var b=function(b,d,j,r){function i(i,c){
+        h(b,d,j,i,c,r)}r=r||2;var c,u=/Async$/;return u.test(b)?(b=b.replace(u,""),"function"==typeof Promise?new Promise(i):p(i)):h(b,d,j,c,c,r)}
+        ;function h(h,d,j,r,i,c){return b._api?b._api(h,d,j,r,i,c):(b.q&&b.q.push([h,d,j,r,i,c]),null)}return b.q=[],b}(),y=function(b){function h(h){
+        "function"==typeof h[4]&&h[4](new Error(b))}var d=g.q;if(d){for(var j=0;j<d.length;j++)h(d[j]);d.length=0,d.push=h}},function(){
+        (o=n.createElement(t)).async=!0,o.crossOrigin="anonymous",o.src="https://"+l,o.onerror=function(){y("Error loading "+l)}
+        ;var b=n.getElementsByTagName(t)[0];b&&b.parentNode?b.parentNode.insertBefore(o,b):n.head.appendChild(o)}(),function(){function b(){}
+        function h(b,h,d){g(b,h,d,1)}function d(b,d,j){h("setProperties",{type:b,properties:d},j)}function j(b,h){d("user",b,h)}function r(b,h,d){j({
+        uid:b},d),h&&j(h,d)}g.identify=r,g.setUserVars=j,g.identifyAccount=b,g.clearUserCookie=b,g.setVars=d,g.event=function(b,d,j){h("trackEvent",{
+        name:b,properties:d},j)},g.anonymize=function(){r(!1)},g.shutdown=function(){h("shutdown")},g.restart=function(){h("restart")},
+        g.log=function(b,d){h("log",{level:b,msg:d})},g.consent=function(b){h("setIdentity",{consent:!arguments.length||b})}}(),s="fetch",
+        f="XMLHttpRequest",g._w={},g._w[f]=m[f],g._w[s]=m[s],m[s]&&(m[s]=function(){return g._w[s].apply(this,arguments)}),g._v="2.0.0")
+        }(window,document,window._fs_namespace,"script",window._fs_script);
+    </script>
+
+    <!-- FullStory Pages API -->
+    <script>
+        FS.setVars('page', { pageName: 'Checkout' });
+    </script>
+</head>
+<body>
+
+    <header data-section="site-header">
+        <a href="index.html" class="logo" data-id="logo">AdamCorp</a>
+        <nav data-component="navigation" data-id="main-nav">
+            <ul data-id="nav-list">
+                <li><a href="index.html#home"     data-component="link" data-id="home"     data-position="1">Home</a></li>
+                <li><a href="index.html#features" data-component="link" data-id="features" data-position="2">Features</a></li>
+                <li><a href="index.html#about"    data-component="link" data-id="about-us" data-position="3">About Us</a></li>
+                <li><a href="index.html#contact"  data-component="link" data-id="contact"  data-position="4">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="signup.html" class="cta-header" data-component="button" data-id="sign-up">Sign Up</a>
+    </header>
+
+    <main class="checkout-main" data-section="checkout">
+
+        <!-- Progress Stepper -->
+        <div class="checkout-progress" data-component="stepper" data-id="checkout-progress">
+            <div class="progress-step active" data-id="step-indicator-1">
+                <div class="step-number">1</div>
+                <div class="step-label">Your Details</div>
+            </div>
+            <div class="progress-connector" data-id="connector-1-2"></div>
+            <div class="progress-step" data-id="step-indicator-2">
+                <div class="step-number">2</div>
+                <div class="step-label">Choose Plan</div>
+            </div>
+            <div class="progress-connector" data-id="connector-2-3"></div>
+            <div class="progress-step" data-id="step-indicator-3">
+                <div class="step-number">3</div>
+                <div class="step-label">Payment</div>
+            </div>
+        </div>
+
+        <!-- Step panels wrapper -->
+        <div class="checkout-steps-wrapper">
+
+            <!-- Step 1: Personal Details -->
+            <div class="checkout-step active" id="step-1" data-component="form-step" data-id="step-personal-details">
+                <div class="checkout-card">
+                    <h2 data-id="step-1-title">Your Details</h2>
+                    <p data-id="step-1-subtitle">Tell us a bit about yourself to get started.</p>
+                    <form id="details-form" novalidate data-component="form" data-id="details-form">
+                        <div class="form-row-two">
+                            <div class="form-group" data-id="first-name-field">
+                                <label for="first-name">First Name</label>
+                                <input type="text" id="first-name" placeholder="e.g. Jane" required data-id="first-name-input">
+                            </div>
+                            <div class="form-group" data-id="last-name-field">
+                                <label for="last-name">Last Name</label>
+                                <input type="text" id="last-name" placeholder="e.g. Doe" required data-id="last-name-input">
+                            </div>
+                        </div>
+                        <div class="form-group" data-id="email-field">
+                            <label for="checkout-email">Email Address</label>
+                            <input type="email" id="checkout-email" placeholder="e.g. jane@example.com" required data-id="email-input">
+                        </div>
+                        <div class="form-group" data-id="phone-field">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" placeholder="e.g. +1 555 000 0000" required data-id="phone-input">
+                        </div>
+                        <button type="button" class="cta-primary step-btn" id="details-next" data-component="button" data-id="details-continue" disabled>
+                            Continue →
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Step 2: Product Selection -->
+            <div class="checkout-step" id="step-2" data-component="product-selection" data-id="step-product-selection">
+                <div class="checkout-card checkout-card--wide">
+                    <h2 data-id="step-2-title">Choose Your Plan</h2>
+                    <p data-id="step-2-subtitle">Select one or more plans. Mix and match to build the perfect package.</p>
+                    <div class="product-grid" data-id="product-grid">
+
+                        <div class="product-card" data-product="Feature Title One" data-price="9" data-component="card" data-id="product-basic">
+                            <div class="product-badge product-badge--pink">Basic</div>
+                            <h3 data-id="product-name">Feature Title One</h3>
+                            <div class="product-price" data-id="product-price">$9<span>/mo</span></div>
+                            <ul class="product-features" data-id="product-feature-list">
+                                <li>Core functionality</li>
+                                <li>Email support</li>
+                                <li>Up to 1 user</li>
+                            </ul>
+                        </div>
+
+                        <div class="product-card" data-product="Feature Title Two" data-price="29" data-component="card" data-id="product-pro">
+                            <div class="product-badge product-badge--green">Pro</div>
+                            <h3 data-id="product-name">Feature Title Two</h3>
+                            <div class="product-price" data-id="product-price">$29<span>/mo</span></div>
+                            <ul class="product-features" data-id="product-feature-list">
+                                <li>Everything in Basic</li>
+                                <li>Priority support</li>
+                                <li>Up to 10 users</li>
+                            </ul>
+                        </div>
+
+                        <div class="product-card" data-product="Feature Title Three" data-price="99" data-component="card" data-id="product-enterprise">
+                            <div class="product-badge product-badge--purple">Enterprise</div>
+                            <h3 data-id="product-name">Feature Title Three</h3>
+                            <div class="product-price" data-id="product-price">$99<span>/mo</span></div>
+                            <ul class="product-features" data-id="product-feature-list">
+                                <li>Everything in Pro</li>
+                                <li>Dedicated support</li>
+                                <li>Unlimited users</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="selection-summary" data-id="selection-summary">
+                        <span id="selected-summary">No plan selected yet</span>
+                    </div>
+                    <button type="button" class="cta-primary step-btn" id="products-next" data-component="button" data-id="products-continue" disabled>
+                        Continue →
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 3: Payment -->
+            <div class="checkout-step" id="step-3" data-component="payment-form" data-id="step-payment">
+                <div class="checkout-card">
+                    <h2 data-id="step-3-title">Payment Details</h2>
+                    <p data-id="step-3-subtitle">Your connection is secure. All transactions are encrypted.</p>
+
+                    <div class="order-summary" id="order-summary" data-id="order-summary">
+                        <!-- Populated dynamically -->
+                    </div>
+
+                    <form id="payment-form" novalidate data-component="form" data-id="payment-form">
+                        <div class="form-group" data-id="cardholder-field">
+                            <label for="cardholder-name">Cardholder Name</label>
+                            <input type="text" id="cardholder-name" placeholder="e.g. Jane Doe" required data-id="cardholder-name-input">
+                        </div>
+                        <div class="fs-exclude">
+                            <div class="form-group" data-id="card-number-field">
+                                <label for="card-number">Card Number</label>
+                                <input type="text" id="card-number" placeholder="0000 0000 0000 0000" maxlength="19" required data-id="card-number-input" autocomplete="cc-number">
+                            </div>
+                            <div class="form-row-two">
+                                <div class="form-group" data-id="expiry-field">
+                                    <label for="expiry">Expiry Date</label>
+                                    <input type="text" id="expiry" placeholder="MM / YY" maxlength="7" required data-id="expiry-input" autocomplete="cc-exp">
+                                </div>
+                                <div class="form-group" data-id="cvv-field">
+                                    <label for="cvv">CVV</label>
+                                    <input type="text" id="cvv" placeholder="•••" maxlength="4" required data-id="cvv-input" autocomplete="cc-csc">
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="cta-primary purchase-btn" id="purchase-btn" data-component="button" data-id="purchase-button" disabled>
+                            Complete Purchase
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Success Overlay -->
+    <div class="success-overlay" id="success-overlay" data-id="success-overlay" style="display:none;">
+        <div class="success-card" data-component="card" data-id="success-card">
+            <div class="success-icon" data-id="success-icon">⚡</div>
+            <h2 data-id="success-title">Purchase Complete!</h2>
+            <p data-id="success-message">Thanks for choosing AdamCorp. Your order is confirmed and a receipt is on its way to your inbox.</p>
+            <a href="index.html" class="cta-primary" data-component="button" data-id="back-to-home-success">Back to Home</a>
+        </div>
+    </div>
+
+    <footer data-section="site-footer">
+        <div class="copyright" data-id="copyright">
+            <p>&copy; 2026 Coding Test Project. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="checkout.js"></script>
+
+    <!-- FullStory Guides and Surveys -->
+    <script>
+    (function (w, d, s) {
+        var a = d.getElementsByTagName('head')[0];
+        var r = d.createElement('script');
+        r.async = 1;
+        r.src = s;
+        r.setAttribute('id', 'usetifulScript');
+        r.dataset.orgId = "o-1DK6AA-na1";
+        r.dataset.apiHostname = "https://guides.fullstory.com";
+        a.appendChild(r);
+    })(window, document, "https://guides.fullstory.com/dist/gs.js");
+    </script>
+</body>
+</html>
